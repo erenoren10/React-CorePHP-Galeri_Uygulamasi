@@ -423,5 +423,34 @@ class VT{
 		return $ip;
 	} 
 }
+$baglan = new VT();
 
+$ayar= $baglan->VeriGetir("ayarlar");
+$des = $ayar[0]["baslik"];
+
+if (isset($_POST["modul-sil"])) {
+    $silmeId = $_POST["modul_id"];
+    $silmeTabloAd = $_POST["modul_tablo_ad"];
+    
+	$sql1 = "DELETE FROM moduller WHERE id=$silmeId";
+    $sql2 = "DROP TABLE $silmeTabloAd";
+    $sql3 = "DELETE FROM kategoriler WHERE seflink='$silmeTabloAd'";
+
+
+    try {
+
+		$baglan->baglanti->exec($sql1);
+        echo "Record deleted successfully from moduller table.";
+
+		$baglan->baglanti->exec($sql2);
+        echo "Table $silmeTabloAd dropped successfully.";
+
+        $baglan->baglanti->exec($sql3);
+
+        echo '<script>window.history.back();</script>';
+    } catch(PDOException $e) {
+        echo "Hata: " . $e->getMessage();
+    }
+
+}
 ?>
