@@ -21,7 +21,7 @@ Projedeki klasörlerin amacı ve içeriği aşağıdaki gibidir:
 
 Projenin kurulumu için aşağıdaki adımları izleyebilirsiniz:
 
-1. Öncelikle, projeyi bilgisayarınıza klonlayın: `git clone https://github.com/kullaniciadi/React-CorePHP-Galeri_Uygulamasi.git`
+1. Öncelikle, projeyi bilgisayarınıza klonlayın: `git clone https://github.com/erenoren10/React-CorePHP-Galeri_Uygulamasi.git`
    
 2. Veritabanı dosyalarını `veritabani` klasöründen alın ve kullanılacak veritabanına aktarın.
 
